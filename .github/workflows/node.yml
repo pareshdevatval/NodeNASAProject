@@ -12,6 +12,6 @@ jobs:
         name: Use Node.js version 16
       - uses: actions/setup-node@v2
       - run: |
-          npm install 
           npm install concurrently
+          npm install           
           npm run build --prefix client
