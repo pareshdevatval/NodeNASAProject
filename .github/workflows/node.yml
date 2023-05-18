@@ -19,7 +19,7 @@ jobs:
         name: Use Node.js version ${{ matrix.node-version }}
       - uses: actions/setup-node@v2
       - name: Use mongodb from GitHub actions
-        uses: supercharge/mongodb-github-action@1.9.0
+        uses: supercharge/mongodb-github-action@1.8.0
       - run: |
           npm install concurrently
           npm install           
