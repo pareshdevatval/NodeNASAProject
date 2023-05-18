@@ -6,10 +6,15 @@ on:
     branches: main
 jobs:
   build:
+    env:
+      CI: true
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        name: Use Node.js version 16
+        name: Use Node.js version ${{ matrix.node-version }}
       - uses: actions/setup-node@v2
       - run: |
           npm install concurrently
