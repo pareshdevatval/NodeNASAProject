@@ -1,10 +1,17 @@
-name: example
-
-on: push
-
+name: NASA Project CI
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
 jobs:
-  job_1:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: My first step
-        run: echo This is the first step of my first job.
+      - uses: actions/checkout@v2
+      - name: Use Node.js version 16
+      - uses: actions/setp-node@v2
+        with:
+          node-version: "16"
+      - run: npm install
+      - run: npm run build --prefix client
