@@ -9,9 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js version 16
+        name: Use Node.js version 16
       - uses: actions/setp-node@v2
-        with:
-          node-version: "16"
-      - run: npm install
-      - run: npm run build --prefix client
+      - run: |
+          npm install 
+          npm run build --prefix client
