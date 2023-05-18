@@ -15,7 +15,9 @@
     "deploy": "concurrently \"npm:build-client\" \"npm:start-server\"",
     "deploy-server": "cd server && npm run cluster",
     "deploy-cluster": "concurrently \"npm:build-client\" \"npm:deploy-server\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test-client": "cd client && npm run test",
+    "test-server": "cd server && npm run test",
+    "test": "concurrently \"npm:test-client\" \"npm:test-server\""
   },
   "keywords": [],
   "author": "",

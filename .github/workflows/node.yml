@@ -20,3 +20,4 @@ jobs:
           npm install concurrently
           npm install           
           npm run build --prefix client
+          npm run test
