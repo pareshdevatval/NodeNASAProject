@@ -13,4 +13,5 @@ jobs:
       - uses: actions/setup-node@v2
       - run: |
           npm install 
+          npm install concurrently
           npm run build --prefix client
